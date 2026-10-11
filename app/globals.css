@@ -1,26 +1,221 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-oswald: var(--font-oswald), 'Oswald', sans-serif;
+  --font-grotesk: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  --font-mono: var(--font-space-mono), 'Space Mono', monospace;
+
+  /* Font families */
+  --font-headline-xl: var(--font-oswald), 'Oswald', sans-serif;
+  --font-headline-xl-mobile: var(--font-oswald), 'Oswald', sans-serif;
+  --font-headline-lg: var(--font-oswald), 'Oswald', sans-serif;
+  --font-headline-md: var(--font-oswald), 'Oswald', sans-serif;
+  --font-headline-sm: var(--font-oswald), 'Oswald', sans-serif;
+  --font-display-hero: var(--font-oswald), 'Oswald', sans-serif;
+  --font-display-hero-mobile: var(--font-oswald), 'Oswald', sans-serif;
+  
+  --font-body-lg: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  --font-body-md: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  --font-body-sm: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+
+  --font-label-mono-lg: var(--font-space-mono), 'Space Mono', monospace;
+  --font-label-mono-sm: var(--font-space-mono), 'Space Mono', monospace;
+
+  /* Colors */
+  --color-surface-base: #080808;
+  --color-surface-card: #161616;
+  --color-surface-card-hover: #1C1C1C;
+  --color-surface-raised: #0E0E0E;
+  --color-surface-dim: #131313;
+  --color-surface: #131313;
+  --color-surface-bright: #3a3939;
+  --color-surface-container: #201f1f;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353534;
+  --color-surface-variant: #353534;
+
+  --color-border-subtle: #262626;
+  --color-border-strong: #333333;
+  --color-border-highlight: #CCFF00;
+  --color-neon-volt: #CCFF00;
+  --color-volt-bright: #DFFF00;
+  --color-clay-red: #D83833;
+
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A1A1A1;
+  --color-text-muted: #555555;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #c4c9ac;
+  --color-on-background: #e5e2e1;
+  --color-background: #080808;
+
+  --color-primary: #ffffff;
+  --color-on-primary: #283500;
+  --color-primary-container: #c3f400;
+  --color-on-primary-container: #556d00;
+  --color-primary-fixed: #c3f400;
+  --color-primary-fixed-dim: #abd600;
+  --color-on-primary-fixed: #161e00;
+  --color-on-primary-fixed-variant: #3c4d00;
+
+  --color-secondary: #ffb4ab;
+  --color-on-secondary: #690006;
+  --color-secondary-container: #9b020f;
+  --color-on-secondary-container: #ffa49a;
+  --color-secondary-fixed: #ffdad6;
+  --color-secondary-fixed-dim: #ffb4ab;
+  --color-on-secondary-fixed: #410002;
+  --color-on-secondary-fixed-variant: #93000d;
+
+  --color-tertiary: #ffffff;
+  --color-on-tertiary: #21323e;
+  --color-tertiary-container: #d2e5f5;
+  --color-on-tertiary-container: #556774;
+  --color-tertiary-fixed: #d2e5f5;
+  --color-tertiary-fixed-dim: #b6c9d8;
+  --color-on-tertiary-fixed: #0b1d29;
+  --color-on-tertiary-fixed-variant: #374956;
+
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+
+  --color-outline: #8e9379;
+  --color-outline-variant: #444933;
+  --color-inverse-surface: #e5e2e1;
+  --color-inverse-on-surface: #313030;
+  --color-inverse-primary: #506600;
+
+  /* Spacing */
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-space-xxl: 4rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-gutter-sm: 1rem;
+  --spacing-margin: 3rem;
+  --spacing-margin-mobile: 1.25rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #080808;
+    color: #e5e2e1;
+    overflow-x: hidden;
+  }
+  
+  body {
+    overscroll-behavior: none;
+    font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  * {
+    scrollbar-width: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Precise stitch typography utilities */
+.text-label-mono-lg {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-family: var(--font-space-mono), 'Space Mono', monospace;
+}
+.text-label-mono-sm {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  font-family: var(--font-space-mono), 'Space Mono', monospace;
+}
+.text-body-lg {
+  font-size: 18px;
+  line-height: 28px;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+}
+.text-body-md {
+  font-size: 15px;
+  line-height: 24px;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+}
+.text-body-sm {
+  font-size: 13px;
+  line-height: 20px;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+}
+.text-headline-xl {
+  font-size: 48px;
+  line-height: 52px;
+  letter-spacing: 0.03em;
+  font-family: var(--font-oswald), 'Oswald', sans-serif;
+  font-weight: 700;
+}
+.text-headline-xl-mobile {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 0.02em;
+  font-family: var(--font-oswald), 'Oswald', sans-serif;
+  font-weight: 700;
+}
+.text-display-hero-mobile {
+  font-size: 42px;
+  line-height: 46px;
+  letter-spacing: 0.03em;
+  font-family: var(--font-oswald), 'Oswald', sans-serif;
+  font-weight: 700;
+}
+.text-display-hero {
+  font-size: 72px;
+  line-height: 76px;
+  letter-spacing: 0.04em;
+  font-family: var(--font-oswald), 'Oswald', sans-serif;
+  font-weight: 700;
+}
+.text-headline-lg {
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 0.02em;
+  font-family: var(--font-oswald), 'Oswald', sans-serif;
+  font-weight: 600;
+}
+.text-headline-md {
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  font-family: var(--font-oswald), 'Oswald', sans-serif;
+  font-weight: 600;
+}
+.text-headline-sm {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  font-family: var(--font-oswald), 'Oswald', sans-serif;
+  font-weight: 600;
+}
+
+/* Material Symbols Outlined support */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
 }
