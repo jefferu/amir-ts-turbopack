@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -133,15 +134,15 @@ export default function Footer() {
             © 2025 TENNISSCHULE AMIR. ALLE RECHTE VORBEHALTEN.
           </div>
           <div className="flex items-center gap-space-lg font-label-mono-sm text-label-mono-sm uppercase">
-            <a className="text-text-secondary hover:text-text-primary transition-colors" href="#inquiry">
+            <Link className="text-text-secondary hover:text-border-highlight transition-colors" href="/impressum">
               IMPRESSUM
-            </a>
-            <a className="text-text-secondary hover:text-text-primary transition-colors" href="#inquiry">
+            </Link>
+            <Link className="text-text-secondary hover:text-border-highlight transition-colors" href="/datenschutz">
               DATENSCHUTZ
-            </a>
-            <a className="text-text-secondary hover:text-text-primary transition-colors" href="#inquiry">
+            </Link>
+            <Link className="text-text-secondary hover:text-border-highlight transition-colors" href="/agb">
               AGB
-            </a>
+            </Link>
           </div>
         </div>
       </div>

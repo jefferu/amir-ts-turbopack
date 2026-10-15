@@ -8,12 +8,12 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "TRAINING", href: "#tracks" },
-    { label: "METHODIK", href: "#methodology" },
-    { label: "CAMPS & ACTION", href: "#camps" },
-    { label: "STANDORTE", href: "#facilities" },
-    { label: "CHEF-TRAINER", href: "#trainer" },
-    { label: "ERFOLGE", href: "#reviews" },
+    { label: "TRAINING", href: "/#tracks" },
+    { label: "METHODIK", href: "/#methodology" },
+    { label: "CAMPS & ACTION", href: "/#camps" },
+    { label: "STANDORTE", href: "/#facilities" },
+    { label: "CHEF-TRAINER", href: "/#trainer" },
+    { label: "ERFOLGE", href: "/#reviews" },
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function Header() {
       {/* Main Navbar */}
       <div className="h-20 w-full px-margin-mobile lg:px-margin flex items-center justify-between">
         {/* Logo */}
-        <Link href="#" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-10 h-10 shrink-0 bg-surface-base border border-border-subtle p-1 flex items-center justify-center">
             <Image
               src="/images/amir/Logo-Amir.png"
@@ -71,7 +71,7 @@ export default function Header() {
         {/* Actions & CTA */}
         <div className="flex items-center gap-space-md">
           <a
-            href="#inquiry"
+            href="/#inquiry"
             className="hidden sm:inline-flex bg-border-highlight hover:bg-volt-bright text-surface-base font-label-mono-lg text-label-mono-lg px-space-lg py-space-sm uppercase tracking-wider transition-all duration-150 items-center justify-center font-bold hover:shadow-[0_0_20px_rgba(204,255,0,0.35)]"
           >
             SCHNUPPERSTUNDE
@@ -118,7 +118,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#inquiry"
+            href="/#inquiry"
             onClick={() => setMobileMenuOpen(false)}
             className="w-full bg-border-highlight hover:bg-volt-bright text-surface-base font-label-mono-lg text-label-mono-lg py-3 uppercase tracking-wider font-bold text-center mt-2 shadow-[0_0_16px_rgba(204,255,0,0.25)]"
           >

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Oswald, Space_Grotesk, Space_Mono } from "next/font/google";
+import CookieBanner from "@/components/CookieBanner";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -60,6 +61,7 @@ export default function RootLayout({
       </head>
       <body className="bg-surface-base font-body-md text-on-surface antialiased selection:bg-border-highlight selection:text-surface-base min-h-screen">
         {children}
+        <CookieBanner />
       </body>
     </html>
   );
