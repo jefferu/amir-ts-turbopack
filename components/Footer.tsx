@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getAssetPath } from "@/lib/assets";
 
+/**
+ * Global site footer with academy contact info, legal links, and certification badges.
+ */
 export default function Footer() {
   return (
     <footer className="w-full bg-surface-raised text-on-surface-variant mt-space-xxl border-t border-border-subtle">
@@ -24,7 +28,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 pt-2">
               <div className="w-8 h-8 rounded bg-surface-base border border-border-subtle flex items-center justify-center p-1">
                 <Image
-                  src="/images/amir/Logo-Amir.png"
+                  src={getAssetPath("/images/amir/Logo-Amir.png")}
                   alt="Amir Logo"
                   width={24}
                   height={24}
@@ -33,7 +37,7 @@ export default function Footer() {
               </div>
               <div className="w-8 h-8 rounded bg-surface-base border border-border-subtle flex items-center justify-center p-1">
                 <Image
-                  src="/images/amir/official_atp_certified.png"
+                  src={getAssetPath("/images/amir/official_atp_certified.png")}
                   alt="ATP Certified"
                   width={24}
                   height={24}
@@ -42,7 +46,7 @@ export default function Footer() {
               </div>
               <div className="w-8 h-8 rounded bg-surface-base border border-border-subtle flex items-center justify-center p-1">
                 <Image
-                  src="/images/amir/logo_menu.png"
+                  src={getAssetPath("/images/amir/logo_menu.png")}
                   alt="Rafa Nadal Academy"
                   width={24}
                   height={24}

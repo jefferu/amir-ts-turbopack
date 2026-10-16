@@ -1,25 +1,50 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 
-export default function CookieBanner() {
-  const [showBanner, setShowBanner] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
+/**
+ * Subscribes to storage events to keep client-side cookie consent state synchronized.
+ */
+function subscribe(callback: () => void): () => void {
+  window.addEventListener("storage", callback);
+  return () => window.removeEventListener("storage", callback);
+}
 
-  useEffect(() => {
-    const consent = localStorage.getItem("ts_amir_cookie_consent");
-    if (!consent) {
-      setShowBanner(true);
-    }
-  }, []);
+/**
+ * Reads consent data from localStorage on client.
+ */
+function getConsentSnapshot(): string | null {
+  return localStorage.getItem("ts_amir_cookie_consent");
+}
+
+/**
+ * Provides fallback snapshot during SSR to avoid hydration mismatch.
+ */
+function getServerSnapshot(): string | null {
+  return "ssr";
+}
+
+/**
+ * Renders GDPR-compliant cookie consent banner with granular preferences.
+ *
+ * Uses useSyncExternalStore rather than useEffect setState to avoid cascading renders
+ * and maintain consistent state across browser tabs.
+ */
+export default function CookieBanner() {
+  const consent = useSyncExternalStore(subscribe, getConsentSnapshot, getServerSnapshot);
+  const [showDetails, setShowDetails] = useState(false);
+  const [closed, setClosed] = useState(false);
+
+  const showBanner = consent === null && !closed;
 
   const handleAcceptAll = () => {
     localStorage.setItem(
       "ts_amir_cookie_consent",
       JSON.stringify({ necessary: true, analytics: true, marketing: true, timestamp: new Date().toISOString() })
     );
-    setShowBanner(false);
+    window.dispatchEvent(new Event("storage"));
+    setClosed(true);
   };
 
   const handleAcceptNecessary = () => {
@@ -27,7 +52,8 @@ export default function CookieBanner() {
       "ts_amir_cookie_consent",
       JSON.stringify({ necessary: true, analytics: false, marketing: false, timestamp: new Date().toISOString() })
     );
-    setShowBanner(false);
+    window.dispatchEvent(new Event("storage"));
+    setClosed(true);
   };
 
   if (!showBanner) return null;

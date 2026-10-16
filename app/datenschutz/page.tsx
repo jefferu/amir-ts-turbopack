@@ -7,6 +7,9 @@ export const metadata = {
   description: "Datenschutzerklärung und Informationen zur Datenverarbeitung nach DSGVO.",
 };
 
+/**
+ * GDPR-compliant Privacy Policy (Datenschutzerklärung) page detailing rights and data processing protocols.
+ */
 export default function DatenschutzPage() {
   return (
     <div className="bg-surface-base text-on-surface min-h-screen flex flex-col selection:bg-border-highlight selection:text-surface-base">

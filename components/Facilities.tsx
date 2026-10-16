@@ -1,5 +1,9 @@
 import Image from "next/image";
+import { getAssetPath } from "@/lib/assets";
 
+/**
+ * Facilities section highlighting club partner locations and international academy ties.
+ */
 export default function Facilities() {
   const facilities = [
     {
@@ -82,7 +86,7 @@ export default function Facilities() {
                 {fac.image && (
                   <div className="relative h-12 w-full mb-3 flex items-center justify-start opacity-70 group-hover:opacity-100 transition-opacity">
                     <Image
-                      src={fac.image}
+                      src={getAssetPath(fac.image)}
                       alt={fac.name}
                       width={120}
                       height={40}

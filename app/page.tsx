@@ -10,6 +10,9 @@ import BookingTerminal from "@/components/BookingTerminal";
 import SocialProof from "@/components/SocialProof";
 import Footer from "@/components/Footer";
 
+/**
+ * Primary landing page composing hero, methodology, gallery, trainer credentials, curriculum tracks, and booking terminal.
+ */
 export default function Home() {
   return (
     <div className="bg-surface-base text-on-surface min-h-screen flex flex-col selection:bg-border-highlight selection:text-surface-base">

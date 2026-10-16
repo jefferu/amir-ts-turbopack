@@ -3,7 +3,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { getAssetPath } from "@/lib/assets";
 
+/**
+ * Site navigation header including brand badge, desktop menu, mobile drawer, and CTA.
+ *
+ * Uses Next.js Link components to ensure routes are properly prefixed with production basePath.
+ */
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -35,7 +41,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-10 h-10 shrink-0 bg-surface-base border border-border-subtle p-1 flex items-center justify-center">
             <Image
-              src="/images/amir/Logo-Amir.png"
+              src={getAssetPath("/images/amir/Logo-Amir.png")}
               alt="Tennisschule Amir"
               width={36}
               height={36}
@@ -58,31 +64,31 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-space-lg">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               className="font-label-mono-lg text-label-mono-lg uppercase tracking-wider text-on-surface-variant hover:text-border-highlight transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         {/* Actions & CTA */}
         <div className="flex items-center gap-space-md">
-          <a
+          <Link
             href="/#inquiry"
             className="hidden sm:inline-flex bg-border-highlight hover:bg-volt-bright text-surface-base font-label-mono-lg text-label-mono-lg px-space-lg py-space-sm uppercase tracking-wider transition-all duration-150 items-center justify-center font-bold hover:shadow-[0_0_20px_rgba(204,255,0,0.35)]"
           >
             SCHNUPPERSTUNDE
-          </a>
+          </Link>
 
           <div
             title="ATP / GPTCA Zertifiziert"
             className="w-9 h-9 border border-border-subtle bg-surface-base flex items-center justify-center shrink-0 overflow-hidden relative"
           >
             <Image
-              src="/images/amir/official_atp_certified.png"
+              src={getAssetPath("/images/amir/official_atp_certified.png")}
               alt="ATP Certified"
               width={30}
               height={30}
@@ -108,22 +114,22 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-surface-raised border-b border-border-subtle px-margin-mobile py-space-lg flex flex-col gap-space-md animate-fadeIn">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
               className="font-label-mono-lg text-label-mono-lg uppercase tracking-wider text-text-primary hover:text-border-highlight py-2 border-b border-border-subtle/50"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             href="/#inquiry"
             onClick={() => setMobileMenuOpen(false)}
             className="w-full bg-border-highlight hover:bg-volt-bright text-surface-base font-label-mono-lg text-label-mono-lg py-3 uppercase tracking-wider font-bold text-center mt-2 shadow-[0_0_16px_rgba(204,255,0,0.25)]"
           >
             SCHNUPPERSTUNDE ANFRAGEN
-          </a>
+          </Link>
         </div>
       )}
     </header>

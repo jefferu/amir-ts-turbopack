@@ -1,3 +1,6 @@
+/**
+ * Training framework overview detailing biomechanical, tactical, and athletic development phases.
+ */
 export default function Methodology() {
   const steps = [
     {

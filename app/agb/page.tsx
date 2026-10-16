@@ -7,6 +7,9 @@ export const metadata = {
   description: "Allgemeine Geschäfts- und Trainingsbedingungen der Tennisschule Amir Reza.",
 };
 
+/**
+ * Terms and Conditions (AGB) page outlining booking conditions, liability, and cancellation policies.
+ */
 export default function AgbPage() {
   return (
     <div className="bg-surface-base text-on-surface min-h-screen flex flex-col selection:bg-border-highlight selection:text-surface-base">

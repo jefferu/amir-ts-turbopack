@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 
+/**
+ * Interactive court inquiry terminal enabling players to configure session preferences and submit requests.
+ */
 export default function BookingTerminal() {
   const [selectedTrack, setSelectedTrack] = useState<string>("kids");
   const [selectedLocation, setSelectedLocation] = useState<string>("weiterstadt");

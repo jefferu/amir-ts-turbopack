@@ -1,3 +1,6 @@
+/**
+ * Core value proposition grid communicating academy advantages, certifications, and amenities.
+ */
 export default function FeatureGrid() {
   const features = [
     {

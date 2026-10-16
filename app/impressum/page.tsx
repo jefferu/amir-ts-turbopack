@@ -7,6 +7,9 @@ export const metadata = {
   description: "Rechtliche Pflichtangaben und Impressum der Tennisschule Amir Reza.",
 };
 
+/**
+ * Statutory legal disclosure (Impressum) compliant with German Telemediengesetz (§ 5 TMG / § 18 MStV).
+ */
 export default function ImpressumPage() {
   return (
     <div className="bg-surface-base text-on-surface min-h-screen flex flex-col selection:bg-border-highlight selection:text-surface-base">

@@ -1,5 +1,9 @@
 import Image from "next/image";
+import { getAssetPath } from "@/lib/assets";
 
+/**
+ * Visual photo showcase demonstrating training drills, camps, and equipment fitting.
+ */
 export default function PhotoShowcase() {
   return (
     <section className="w-full px-margin-mobile lg:px-margin py-space-xxl" id="camps">
@@ -10,7 +14,7 @@ export default function PhotoShowcase() {
           <div className="relative group overflow-hidden bg-surface-card border border-border-subtle min-h-[460px] flex flex-col justify-end p-space-lg">
             <div className="absolute inset-0">
               <Image
-                src="/images/amir/amir_training.png"
+                src={getAssetPath("/images/amir/amir_training.png")}
                 alt="Amir Reza beim Einzeltraining"
                 fill
                 priority
@@ -41,7 +45,7 @@ export default function PhotoShowcase() {
           <div className="relative group overflow-hidden bg-surface-card border border-border-subtle min-h-[460px] flex flex-col justify-end p-space-lg">
             <div className="absolute inset-0">
               <Image
-                src="/images/amir/slider-trainer.png"
+                src={getAssetPath("/images/amir/slider-trainer.png")}
                 alt="Trainerteam Tennisschule Amir"
                 fill
                 priority
@@ -74,7 +78,7 @@ export default function PhotoShowcase() {
           {/* Action Snapshot 1: Sommercamp */}
           <div className="relative group overflow-hidden bg-surface-card border border-border-subtle h-56 flex flex-col justify-end p-4">
             <Image
-              src="/images/amir/sommercamp_juli_2024_teil1_1.jpg"
+              src={getAssetPath("/images/amir/sommercamp_juli_2024_teil1_1.jpg")}
               alt="Jugend-Sommercamp Tennisschule Amir"
               fill
               sizes="(max-width: 640px) 100vw, 33vw"
@@ -94,7 +98,7 @@ export default function PhotoShowcase() {
           {/* Action Snapshot 2: Trainingslager */}
           <div className="relative group overflow-hidden bg-surface-card border border-border-subtle h-56 flex flex-col justify-end p-4">
             <Image
-              src="/images/amir/trainingslager_2024_2.jpeg"
+              src={getAssetPath("/images/amir/trainingslager_2024_2.jpeg")}
               alt="Trainingslager Weiterstadt"
               fill
               sizes="(max-width: 640px) 100vw, 33vw"
@@ -114,7 +118,7 @@ export default function PhotoShowcase() {
           {/* Action Snapshot 3: Schnuppertag */}
           <div className="relative group overflow-hidden bg-surface-card border border-border-subtle h-56 flex flex-col justify-end p-4">
             <Image
-              src="/images/amir/schnuppertag.jpeg"
+              src={getAssetPath("/images/amir/schnuppertag.jpeg")}
               alt="Schnuppertag und Einsteigerförderung"
               fill
               sizes="(max-width: 640px) 100vw, 33vw"

@@ -1,5 +1,9 @@
 import Image from "next/image";
+import { getAssetPath } from "@/lib/assets";
 
+/**
+ * Hero section showcasing head coach qualifications, core metrics, and CTAs.
+ */
 export default function Hero() {
   return (
     <section className="w-full px-margin-mobile lg:px-margin pt-space-lg lg:pt-space-xl pb-space-xxl relative overflow-hidden" id="trainer">
@@ -157,7 +161,7 @@ export default function Hero() {
               <div className="bg-surface-raised p-space-sm border border-border-subtle flex items-center gap-3">
                 <div className="relative w-12 h-12 shrink-0 rounded bg-surface-base border border-border-highlight/40 overflow-hidden">
                   <Image
-                    src="/images/amir/amir.png"
+                    src={getAssetPath("/images/amir/amir.png")}
                     alt="Amir Reza Coach"
                     fill
                     className="object-cover object-top"

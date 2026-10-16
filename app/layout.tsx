@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Oswald, Space_Grotesk, Space_Mono } from "next/font/google";
 import CookieBanner from "@/components/CookieBanner";
+import { getAssetPath } from "@/lib/assets";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -39,10 +40,13 @@ export const metadata: Metadata = {
     "Kinder Tennis",
   ],
   icons: {
-    icon: "/images/amir/Logo-Amir.png",
+    icon: getAssetPath("/images/amir/Logo-Amir.png"),
   },
 };
 
+/**
+ * Root application layout providing typography CSS variables, global styling, and cookie banner.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,12 +57,6 @@ export default function RootLayout({
       lang="de"
       className={`dark ${oswald.variable} ${spaceGrotesk.variable} ${spaceMono.variable}`}
     >
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-        />
-      </head>
       <body className="bg-surface-base font-body-md text-on-surface antialiased selection:bg-border-highlight selection:text-surface-base min-h-screen">
         {children}
         <CookieBanner />

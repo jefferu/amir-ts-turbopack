@@ -1,5 +1,9 @@
 import Image from "next/image";
+import { getAssetPath } from "@/lib/assets";
 
+/**
+ * Coach profile section presenting credentials, career milestones, and bio.
+ */
 export default function TrainerSpotlight() {
   const credentials = [
     { title: "GPTCA / ATP A-LIZENZ", desc: "Höchste internationale Coaching-Stufe der ATP Tour" },
@@ -22,7 +26,7 @@ export default function TrainerSpotlight() {
             <div className="relative mx-auto max-w-[420px] bg-surface-card border border-border-subtle p-2 group hover:border-border-highlight transition-all duration-300">
               <div className="relative w-full h-[480px] bg-surface-raised overflow-hidden">
                 <Image
-                  src="/images/amir/amir.png"
+                  src={getAssetPath("/images/amir/amir.png")}
                   alt="Cheftrainer Amir Reza"
                   fill
                   priority
@@ -44,7 +48,7 @@ export default function TrainerSpotlight() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Image
-                    src="/images/amir/official_atp_certified.png"
+                    src={getAssetPath("/images/amir/official_atp_certified.png")}
                     alt="ATP"
                     width={22}
                     height={22}

@@ -1,3 +1,6 @@
+/**
+ * Endorsement banner highlighting competitive student tournament rankings and coach reputation.
+ */
 export default function SocialProof() {
   return (
     <section className="w-full px-margin-mobile lg:px-margin pb-space-xxl" id="reviews">

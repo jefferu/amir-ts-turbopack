@@ -1,3 +1,6 @@
+/**
+ * Training tier catalog displaying distinct curricula for all ages and skill levels.
+ */
 export default function LessonTracks() {
   const tracks = [
     {
