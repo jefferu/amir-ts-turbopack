@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/amir-ts-turbopack//_next/:path+",
+        "destination": "/amir-ts-turbopack/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
