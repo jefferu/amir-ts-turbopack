@@ -4,4 +4,4 @@
 :HL["/amir-ts-turbopack/_next/static/media/8d05cfa5faa8406c-s.p.1s123piy9_v1m.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/amir-ts-turbopack/_next/static/media/dc0d9adbac686440-s.p.3cik_s2si-ft-.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 1:[["children",{"s":"__PAGE__","h":160}]]
-0:{"b":"Zjc0RRhvO1YfV0cVHLY-3","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"q3OA62Ig5R3LF6zeK22wC","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

@@ -1,4 +1,4 @@
 :HL["/amir-ts-turbopack/_next/static/chunks/3buaavjf66zc0.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
-0:{"b":"Zjc0RRhvO1YfV0cVHLY-3","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"q3OA62Ig5R3LF6zeK22wC","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
