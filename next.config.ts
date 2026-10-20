@@ -5,6 +5,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || (isProd ? "/amir-ts-turbop
 
 const nextConfig: NextConfig = {
   output: "export",
+  trailingSlash: true,
   basePath: basePath || undefined,
   assetPrefix: basePath ? `${basePath}/` : undefined,
   env: {
